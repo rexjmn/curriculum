@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 const Skills = () => {
   const [competence, setCompetence] = useState([]);
   async function fetchSkills() {
-    const response = await fetch('http://localhost:5000/competence');
+    const response = await fetch('https://curriculumapi.onrender.com/competence');
         const data = await response.json();
         setCompetence(data);
         console.log(data);

@@ -12,7 +12,7 @@ export default function AdminLoisir() {
    
 
     async function fetchLoisirs() {
-        const response = await fetch("http://localhost:5000/loisir")
+        const response = await fetch("https://curriculumapi.onrender.com/loisir")
         const data = await response.json()
         setLoisir(Array.isArray(data) ? data : [])
         console.log(data)
@@ -22,7 +22,7 @@ export default function AdminLoisir() {
     }, [])
 
     async function deleteLoisir(id) {
-        const response = await fetch(`http://localhost:5000/loisir/${id}`, {
+        const response = await fetch(`https://curriculumapi.onrender.com/loisir/${id}`, {
             method: "DELETE",
 
         })
@@ -40,7 +40,7 @@ export default function AdminLoisir() {
 
     async function handleSave() {
         if (hoby !== "") {
-            const response = await fetch("http://localhost:5000/loisir", {
+            const response = await fetch("https://curriculumapi.onrender.com/loisir", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

@@ -9,7 +9,7 @@ export default function AdminContact() {
     const [adress, setAdress] = useState("")
 
     async function fetchContact() {
-        const response = await fetch('http://localhost:5000/contact');
+        const response = await fetch('https://curriculumapi.onrender.com/contact');
             const data = await response.json();
             console.log(data);
             console.log(data[0].name);
@@ -27,7 +27,7 @@ export default function AdminContact() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        fetch('http://localhost:5000/contact', {
+        fetch('https://curriculumapi.onrender.com/contact', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

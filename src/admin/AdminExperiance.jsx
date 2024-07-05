@@ -16,7 +16,7 @@ export default function AdminExperiance() {
     const [description, setDescription] = useState("")
 
     async function fetchExperiances() {
-        const response = await fetch("http://localhost:5000/experiance")
+        const response = await fetch("https://curriculumapi.onrender.com/experiance")
         const data = await response.json()
         setExperiance(Array.isArray(data) ? data : [])
         console.log(data)
@@ -27,7 +27,7 @@ export default function AdminExperiance() {
 
     async function deleteExperiance(id){
         console.log(id);
-        const response = await fetch(`http://localhost:5000/experiance/${id}`, {
+        const response = await fetch(`https://curriculumapi.onrender.com/experiance/${id}`, {
             method: "DELETE",
         });
         if (response.ok) {
@@ -44,7 +44,7 @@ export default function AdminExperiance() {
 
     async function handleSave() {
         if (company !== "" && position !== "" && date !== "" && description !== "") {
-            const response = await fetch("http://localhost:5000/experiance", {
+            const response = await fetch("https://curriculumapi.onrender.com/experiance", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

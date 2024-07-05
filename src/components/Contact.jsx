@@ -5,7 +5,7 @@ const Contact = () => {
    const [contact, setContact] = useState([])
 
     async function getContact() {
-    const response = await fetch('http://localhost:5000/contact');
+    const response = await fetch('https://curriculumapi.onrender.com/contact');
         const data = await response.json();
         console.log(data);
         console.log(data[0].name);

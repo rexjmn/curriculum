@@ -5,7 +5,7 @@ export default function Formation() {
     const [formation, setFormation] = useState([]);
 
     async function fetchFormations() {
-        const response = await fetch('http://localhost:5000/formation');
+        const response = await fetch('https://curriculumapi.onrender.com/formation');
         const data = await response.json();
         setFormation(data);
         console.log(data);

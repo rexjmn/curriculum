@@ -11,7 +11,7 @@ export default function AdminLanguage() {
   const [isAdd, setIsAdd] = useState(false);
   const [level, setLevel] = useState("");
   async function fetchLangues() {
-    const response = await fetch("http://localhost:5000/langue");
+    const response = await fetch("https://curriculumapi.onrender.com/langue");
     const data = await response.json();
     setLangue(Array.isArray(data) ? data : []);
     console.log(data);
@@ -22,7 +22,7 @@ export default function AdminLanguage() {
   }, []);
   async function deleteLangue(id) {
     console.log(id)
-    const response = await fetch(`http://localhost:5000/langue/${id}`, {
+    const response = await fetch(`https://curriculumapi.onrender.com/langue/${id}`, {
       method: "DELETE",
     });
     if (response.ok) {
@@ -38,7 +38,7 @@ export default function AdminLanguage() {
   }
   async function handleSave() {
     if (language !== "" && level !== "") {
-      const response = await fetch("http://localhost:5000/langue", {
+      const response = await fetch("https://curriculumapi.onrender.com/langue", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

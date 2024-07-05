@@ -15,7 +15,7 @@ export default function AdminFormation() {
     const [school, setSchool] = useState("")
 
     async function fetchFormations() {
-        const response = await fetch("http://localhost:5000/formation")
+        const response = await fetch("https://curriculumapi.onrender.com/formation")
         const data = await response.json()
         setFormation(Array.isArray(data) ? data : [])
         console.log(data)
@@ -26,7 +26,7 @@ export default function AdminFormation() {
 
     async function deleteFormation(id){
         console.log(id);
-        const response = await fetch(`http://localhost:5000/formation/${id}`, {
+        const response = await fetch(`https://curriculumapi.onrender.com/formation/${id}`, {
             method: "DELETE",
         });
         if (response.ok) {
@@ -43,7 +43,7 @@ export default function AdminFormation() {
 
     async function handleSave() {
         if (title !== "" && description !== "" && date !== "" && school !== "") {
-            const response = await fetch("http://localhost:5000/formation", {
+            const response = await fetch("https://curriculumapi.onrender.com/formation", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

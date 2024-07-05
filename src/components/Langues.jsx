@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 export default function Langues() {
   const [langue, setLangue] = useState([]);
   async function fetchLangues() {
-    const response = await fetch('http://localhost:5000/langue');
+    const response = await fetch('https://curriculumapi.onrender.com/langue');
     const data = await response.json();
     setLangue(data);
     console.log(data);

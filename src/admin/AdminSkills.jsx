@@ -10,7 +10,7 @@ export default function AdminSkills() {
   const [skill, setSkill] = useState("");
   const [isAdd, setIsAdd] = useState(false);
   async function fetchSkills() {
-    const response = await fetch("http://localhost:5000/competence");
+    const response = await fetch("https://curriculumapi.onrender.com/competence");
     const data = await response.json();
     setCompetence(data);
     console.log(data);
@@ -21,7 +21,7 @@ export default function AdminSkills() {
   }, []);
 
   async function deleteSkill(id) {
-    const response = await fetch(`http://localhost:5000/competence/${id}`, {
+    const response = await fetch(`https://curriculumapi.onrender.com/competence/${id}`, {
       method: "DELETE",
     });
     if (response.ok) {
@@ -37,7 +37,7 @@ export default function AdminSkills() {
   }
   async function handleSave() {
     if (skill !== "") {
-      const response = await fetch("http://localhost:5000/competence", {
+      const response = await fetch("https://curriculumapi.onrender.com/competence", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -4,7 +4,7 @@ export default function Loisir() {
     const [loisir, setLoisir] = useState([]);
 
     async function fetchLoisir() {
-      const response = await fetch('http://localhost:5000/loisir');
+      const response = await fetch( 'https://curriculumapi.onrender.com/loisir');
           const data = await response.json();
           setLoisir(data);
           console.log(data);

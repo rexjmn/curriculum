@@ -4,7 +4,7 @@ export default function Experience() {
     const [experiences, setExperiences] = useState([]);
 
     async function fetchExperiences() {
-        const response = await fetch('http://localhost:5000/experiance');
+        const response = await fetch('https://curriculumapi.onrender.com/experiance');
         const data = await response.json();
         setExperiences(data);
     }
